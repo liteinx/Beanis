@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Downloads - Beanis</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="page-header">
+            <a href="index.html" class="back-link">← Back to Store</a>
+            <h1>Share Downloads</h1>
+            <p class="header-description">Generate secure links for your clients to download their APKs</p>
+        </header>
+
+        <main class="share-section">
+            <div class="share-list">
+        <div class="share-item">
+            <div class="share-app-info">
+                <div class="share-icon">
+                    
+                    <div class=icon-placeholder-small>Un</div>
+                </div>
+                <div>
+                    <div class="share-app-name">Unknown</div>
+                    <div class="share-client-id"></div>
+                </div>
+            </div>
+            <div class="share-link-box">
+                <input type="text" readonly value="apks/aba0267c8d7f67a3.html" class="share-link-input" id="link-aba0267c8d7f67a3">
+                <button class="btn-copy" onclick="copyShareLink('aba0267c8d7f67a3')">Copy Link</button>
+            </div>
+        </div>
+        <div class="share-item">
+            <div class="share-app-info">
+                <div class="share-icon">
+                    
+                    <div class=icon-placeholder-small>Un</div>
+                </div>
+                <div>
+                    <div class="share-app-name">Unknown</div>
+                    <div class="share-client-id"></div>
+                </div>
+            </div>
+            <div class="share-link-box">
+                <input type="text" readonly value="apks/4b46100be0e9c80e.html" class="share-link-input" id="link-4b46100be0e9c80e">
+                <button class="btn-copy" onclick="copyShareLink('4b46100be0e9c80e')">Copy Link</button>
+            </div>
+        </div>
+        <div class="share-item">
+            <div class="share-app-info">
+                <div class="share-icon">
+                    
+                    <div class=icon-placeholder-small>Un</div>
+                </div>
+                <div>
+                    <div class="share-app-name">Unknown</div>
+                    <div class="share-client-id"></div>
+                </div>
+            </div>
+            <div class="share-link-box">
+                <input type="text" readonly value="apks/65f0fbe1bd49ccb1.html" class="share-link-input" id="link-65f0fbe1bd49ccb1">
+                <button class="btn-copy" onclick="copyShareLink('65f0fbe1bd49ccb1')">Copy Link</button>
+            </div>
+        </div>
+        <div class="share-item">
+            <div class="share-app-info">
+                <div class="share-icon">
+                    <img src='/home/scatiux/untitled folder/apple-touch-icon.png' alt=LeakVids>
+                    '/home/scatiux/untitled folder/apple-touch-icon.png'
+                </div>
+                <div>
+                    <div class="share-app-name">LeakVids</div>
+                    <div class="share-client-id">abd</div>
+                </div>
+            </div>
+            <div class="share-link-box">
+                <input type="text" readonly value="apks/6970b9eded7fcbcf.html" class="share-link-input" id="link-6970b9eded7fcbcf">
+                <button class="btn-copy" onclick="copyShareLink('6970b9eded7fcbcf')">Copy Link</button>
+            </div>
+        </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function copyShareLink(token) {
+            const input = document.getElementById('link-' + token);
+            const url = window.location.origin + '/' + input.value;
+            navigator.clipboard.writeText(url).then(() => {
+                alert('Link copied: ' + url);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,468 @@
+:root {
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+    --bg: #0f172a;
+    --bg-card: #1e293b;
+    --bg-hover: #334155;
+    --text: #f1f5f9;
+    --text-muted: #94a3b8;
+    --border: #334155;
+    --success: #10b981;
+    --shadow: rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-link {
+    padding: 10px 20px;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    background: var(--bg-hover);
+    color: var(--text);
+}
+
+.nav-link.active {
+    background: var(--primary);
+    color: white;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero p {
+    font-size: 1.2em;
+    color: var(--text-muted);
+}
+
+/* Apps Section */
+.apps-section {
+    margin-bottom: 40px;
+}
+
+.apps-section h2 {
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+.apps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+.app-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    gap: 16px;
+    transition: all 0.3s;
+}
+
+.app-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 8px 24px var(--shadow);
+    transform: translateY(-2px);
+}
+
+.app-icon {
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-icon img {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+}
+
+.icon-placeholder {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+
+.app-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.app-name {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+    color: var(--text);
+}
+
+.app-description {
+    color: var(--text-muted);
+    font-size: 0.9em;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.app-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.version-count {
+    font-size: 0.85em;
+    color: var(--text-muted);
+}
+
+.app-status {
+    display: flex;
+    align-items: center;
+}
+
+.status-badge {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--success);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Page Header */
+.page-header {
+    margin-bottom: 40px;
+}
+
+.back-link {
+    display: inline-block;
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-bottom: 20px;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: var(--primary);
+}
+
+.client-header-content {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.app-icon-large {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-icon-large img {
+    width: 96px;
+    height: 96px;
+    border-radius: 16px;
+}
+
+.app-icon-large .icon-placeholder {
+    width: 96px;
+    height: 96px;
+    font-size: 2em;
+}
+
+.page-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.header-description {
+    color: var(--text-muted);
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.client-label {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Downloads Section */
+.downloads-section h2 {
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+.downloads-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.download-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.2s;
+}
+
+.download-item:hover {
+    border-color: var(--primary);
+}
+
+.download-info {
+    flex: 1;
+}
+
+.download-version {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.download-meta {
+    font-size: 0.9em;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.download-notes {
+    font-size: 0.85em;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.btn-download {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-download:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+}
+
+/* Share Section */
+.share-section {
+    max-width: 800px;
+}
+
+.share-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.share-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.share-app-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.share-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.share-icon img {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+}
+
+.icon-placeholder-small {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.share-app-name {
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.share-client-id {
+    color: var(--text-muted);
+    font-size: 0.9em;
+}
+
+.share-link-box {
+    display: flex;
+    gap: 10px;
+}
+
+.share-link-input {
+    flex: 1;
+    padding: 10px 14px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-muted);
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+.btn-copy {
+    padding: 10px 20px;
+    background: var(--bg-hover);
+    color: var(--text);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-copy:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-muted);
+    font-size: 0.9em;
+    border-top: 1px solid var(--border);
+    margin-top: 60px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .apps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .download-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .btn-download {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .share-link-box {
+        flex-direction: column;
+    }
+
+    .btn-copy {
+        width: 100%;
+    }
+}
