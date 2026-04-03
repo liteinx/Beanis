@@ -1,0 +1,11 @@
+# Scripts and templates
+scripts/
+.claude/
+
+# APK files
+apks/
+
+# OS files
+.DS_Store
+Thumbs.db
+CLAUDE.md
