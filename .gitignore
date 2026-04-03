@@ -3,7 +3,7 @@ scripts/
 .claude/
 
 # APK files
-apks/
+#apks/
 
 # Generated site
 #public/
