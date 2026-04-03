@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beanis - APK Distribution System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            max-width: 800px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icon {
+            font-size: 1.2em;
+        }
+
+        p, li {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            color: #f8f8f2;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .status {
+            background: #f0f0f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .status-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .status-item:last-child {
+            border-bottom: none;
+        }
+
+        .status-label {
+            font-weight: 600;
+            color: #666;
+        }
+
+        .status-value {
+            color: #333;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #999;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🥂 Beanis</h1>
+        <p class="subtitle">APK Distribution System</p>
+
+        <div class="section">
+            <h2><span class="icon">📱</span> What is Beanis?</h2>
+            <p>Beanis is a bash-based APK distribution system for sharing Android APK files securely. It uses a template-based approach to manage multiple APK variants for different clients while maintaining consistent metadata.</p>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">✨</span> Features</h2>
+            <ul>
+                <li>Template-based APK management</li>
+                <li>Client-specific download pages with secure tokens</li>
+                <li>Minimalistic, modern web interface</li>
+                <li>Automatic APK metadata tracking (SHA256, file size, etc.)</li>
+                <li>Static site generation - no database required</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">🚀</span> Quick Start</h2>
+            <pre><code># Create an APK template
+./scripts/create_template.sh
+
+# Add APKs for different clients
+./scripts/add_apk.sh /path/to/app.apk --template duckduckgo --client client1
+
+# Generate the distribution website
+./scripts/generate_site.sh
+
+# Serve the site
+cd public && python3 -m http.server 8080</code></pre>
+            <a href="public/" class="btn">View Generated Site →</a>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">📂</span> Project Structure</h2>
+            <pre><code>beanis/
+├── apks/              # APK files
+├── scripts/           # Management scripts
+│   ├── add_apk.sh
+│   ├── create_template.sh
+│   ├── list_apks.sh
+│   ├── generate_site.sh
+│   ├── apk_registry.json
+│   └── templates/     # APK templates
+├── public/            # Generated website
+│   ├── index.html     # Store front
+│   ├── share.html     # Share links for clients
+│   └── apks/          # Client-specific download pages
+└── index.html         # This page</pre>
+        </div>
+
+        <div class="status">
+            <div class="status-item">
+                <span class="status-label">Templates</span>
+                <span class="status-value" id="template-count">-</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Registered APKs</span>
+                <span class="status-value" id="apk-count">-</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Website Generated</span>
+                <span class="status-value" id="site-status">-</span>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Beanis v1.0 • Secure APK Distribution</p>
+        </div>
+    </div>
+
+    <script>
+        // Check system status
+        async function checkStatus() {
+            try {
+                // Check templates
+                const templates = await fetch('scripts/templates/')
+                    .then(r => r.text())
+                    .then(text => text.match(/\.json/g) || [])
+                    .then(files => files.length);
+                document.getElementById('template-count').textContent = templates;
+
+                // Check APKs
+                const apks = await fetch('scripts/apk_registry.json')
+                    .then(r => r.json())
+                    .then(data => data.apks?.length || 0);
+                document.getElementById('apk-count').textContent = apks;
+
+                // Check if site is generated
+                const siteExists = await fetch('public/index.html', { method: 'HEAD' })
+                    .then(r => r.ok)
+                    .catch(() => false);
+                document.getElementById('site-status').textContent = siteExists ? '✅ Yes' : '❌ No';
+            } catch (e) {
+                document.getElementById('template-count').textContent = 'Unknown';
+                document.getElementById('apk-count').textContent = 'Unknown';
+                document.getElementById('site-status').textContent = 'Unknown';
+            }
+        }
+
+        checkStatus();
+    </script>
+</body>
+</html>
