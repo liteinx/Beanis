@@ -52,7 +52,9 @@ async function fetchApps() {
     showLoading(true);
 
     try {
-        const response = await fetch('/data/apps.json');
+        // Use base path if set, otherwise use relative path
+        const basePath = window.BEANIS_BASE_PATH || '';
+        const response = await fetch(`${basePath}data/apps.json`);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -96,15 +98,22 @@ function renderApps() {
  * Create an app card element
  */
 function createAppCard(app) {
+    const basePath = window.BEANIS_BASE_PATH || '';
     const card = document.createElement('a');
-    card.href = app.url || `/apps/${app.slug}/`;
+
+    // Build app URL using base_path
+    const appUrl = app.url && app.url.startsWith('/')
+        ? basePath + app.url.substring(1)
+        : (app.url || `${basePath}apps/${app.slug}/`);
+
+    card.href = appUrl;
     card.className = 'app-card';
     card.setAttribute('data-category', app.category || 'Other');
 
     // Icon with fallback
     const iconUrl = app.icon && app.icon !== 'icon.png'
-        ? `${app.url}${app.icon}`
-        : `/apps/${app.slug}/icon.png`;
+        ? `${appUrl}${app.icon}`
+        : `${basePath}apps/${app.slug}/icon.png`;
 
     card.innerHTML = `
         <img src="${iconUrl}" alt="${escapeHtml(app.name)}" class="app-icon" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22%3E%3Crect width=%22128%22 height=%22128%22 fill=%22%231a1a1a%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%236366f1%22 font-size=%2248%22 font-weight=%22bold%22%3E${escapeHtml(app.name.charAt(0))}%3C/text%3E%3C/svg%3E'">

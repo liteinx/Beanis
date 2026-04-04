@@ -60,7 +60,8 @@
      * Fetch APK variants JSON
      */
     async function fetchApkVariants() {
-        const response = await fetch(`/apps/${APP_SLUG}/apks.json`);
+        const basePath = window.BEANIS_BASE_PATH || '';
+        const response = await fetch(`${basePath}apps/${APP_SLUG}/apks.json`);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -79,9 +80,10 @@
      */
     function applyVariant(variant) {
         // Update download button
+        const basePath = window.BEANIS_BASE_PATH || '';
         const downloadBtn = document.querySelector('.download-btn');
         if (downloadBtn && variant.apk_file) {
-            downloadBtn.href = `/apps/${APP_SLUG}/apks/${variant.apk_file}`;
+            downloadBtn.href = `${basePath}apps/${APP_SLUG}/apks/${variant.apk_file}`;
         }
 
         // Update version
