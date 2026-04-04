@@ -796,44 +796,10 @@
 
     
 <script>
-// Token-based variant loading
-(async function() {
-    const params = new URLSearchParams(window.location.search);
-    const token = params.get('r');
-
-    if (token) {
-        try {
-            const response = await fetch('/apps/duckduckgo/apks.json');
-            const data = await response.json();
-
-            const variant = data.variants.find(v => v.token === token);
-
-            if (variant) {
-                // Update download button
-                const downloadBtn = document.querySelector('.download-btn');
-                if (downloadBtn) {
-                    downloadBtn.href = '/apps/duckduckgo/apks/' + variant.apk_file;
-                }
-
-                // Update metadata
-                document.querySelector('.download-meta-value').textContent = variant.version;
-                document.querySelectorAll('.download-meta-value')[1].textContent = variant.size_mb + ' MB';
-                document.querySelectorAll('.download-meta-value')[2].textContent = variant.update_date;
-
-                // Update changelog if available
-                if (variant.changelog) {
-                    const changelogText = document.querySelector('.changelog-text');
-                    if (changelogText) {
-                        changelogText.textContent = variant.changelog;
-                    }
-                }
-            }
-        } catch (error) {
-            console.error('Failed to load variant:', error);
-        }
-    }
-})();
+    // Set app slug for the external script
+    window.BEANIS_APP_SLUG = 'duckduckgo';
 </script>
+<script src="/assets/js/app-detail.js"></script>
 
 </body>
 </html>
