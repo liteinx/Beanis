@@ -1,0 +1,11 @@
+# Beanis - APK Distribution System
+# Python dependencies
+
+# Template engine
+jinja2>=3.1.0
+
+# CLI formatting (optional but recommended)
+rich>=13.0.0
+
+# Date parsing
+python-dateutil>=2.8.0

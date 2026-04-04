@@ -1,0 +1,13 @@
+[
+  {
+    "slug": "duckduckgo",
+    "name": "DuckDuckGo Privacy Browser",
+    "package_id": "com.duckduckgo.mobile.android",
+    "short_desc": "Privacy-focused browser that doesn't track you",
+    "long_desc": "DuckDuckGo Browser provides the most comprehensive privacy protection with one-tap encryption, private search, and tracker blocking.",
+    "category": "Productivity",
+    "icon": "icon.png",
+    "last_updated": "2026-04-03",
+    "url": "/apps/duckduckgo/"
+  }
+]

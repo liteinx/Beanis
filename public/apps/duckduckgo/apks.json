@@ -1,0 +1,30 @@
+{
+  "config": {
+    "slug": "duckduckgo",
+    "name": "DuckDuckGo Privacy Browser",
+    "package_id": "com.duckduckgo.mobile.android",
+    "short_desc": "Privacy-focused browser that doesn't track you",
+    "long_desc": "DuckDuckGo Browser provides the most comprehensive privacy protection with one-tap encryption, private search, and tracker blocking.",
+    "icon": "icon.png",
+    "category": "Productivity"
+  },
+  "variants": [
+    {
+      "token": "1e4aee80a1a14dff8a7eef29047007db",
+      "apk_file": "duckduckgo-1e4aee80.apk",
+      "version": "5.8.2",
+      "size_mb": 10.0,
+      "update_date": "2026-04-03",
+      "changelog": "Custom build with enhanced privacy features"
+    },
+    {
+      "token": "d5f9c5fa9b0b4a75876b10a332ab6744",
+      "apk_file": "duckduckgo-d5f9c5fa.apk",
+      "version": "5.8.2",
+      "size_mb": 10.0,
+      "update_date": "2026-04-03",
+      "changelog": "Custom build with enhanced privacy features"
+    }
+  ],
+  "default_token": "1e4aee80a1a14dff8a7eef29047007db"
+}
