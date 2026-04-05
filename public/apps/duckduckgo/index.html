@@ -3,9 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="
-<meta name="description" content="Privacy-focused browser that doesn&#39;t track you. Download DuckDuckGo Privacy Browser APK version 5.8.2. DuckDuckGo Browser provides the most comprehensive privacy protection with one-tap encryption, priva">
-">
+    
+<meta name="description" content="Privacy-focused browser that doesn&#39;t track you. Download DuckDuckGo Privacy Browser APK version 5.8.2 for Android. DuckDuckGo Browser provides the most comprehensive privacy protection with one-tap encryption, priva">
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="/apps/duckduckgo/">
+<meta property="og:title" content="DuckDuckGo Privacy Browser - Download APK 5.8.2">
+<meta property="og:description" content="Privacy-focused browser that doesn&#39;t track you">
+<meta property="og:image" content="../apps/duckduckgo/icon.png">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="/apps/duckduckgo/">
+<meta name="twitter:title" content="DuckDuckGo Privacy Browser - Download APK 5.8.2">
+<meta name="twitter:description" content="Privacy-focused browser that doesn&#39;t track you">
+<meta name="twitter:image" content="../apps/duckduckgo/icon.png">
+<!-- Additional SEO -->
+<meta name="keywords" content="DuckDuckGo Privacy Browser, APK, Android, download, Productivity, 5.8.2, free">
+<meta name="author" content="Beanis">
+<link rel="canonical" href="/apps/duckduckgo/">
+
     <meta name="theme-color" content="#0a0a0a">
 
     
@@ -13,6 +29,10 @@
 
 
     
+<!-- Preload critical assets -->
+<link rel="preload" href="../apps/duckduckgo/icon.png" as="image">
+
+
 
     <style>
         /* Beanis Dark Theme - Modern & Minimalistic */
@@ -361,6 +381,7 @@
 .app-detail-hero {
     padding: var(--space-3xl) 0;
     border-bottom: 1px solid var(--border-default);
+    background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
 }
 
 .app-header {
@@ -375,25 +396,28 @@
     border-radius: 20px;
     object-fit: cover;
     flex-shrink: 0;
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-lg), 0 0 0 1px var(--border-accent);
 }
 
 .app-info-large {
     flex: 1;
+    min-width: 0;
 }
 
 .app-title {
-    font-size: 2.5rem;
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
     font-weight: 700;
     margin-bottom: var(--space-sm);
     line-height: 1.2;
+    word-wrap: break-word;
 }
 
 .app-package-id {
     font-family: var(--font-mono);
-    font-size: 0.875rem;
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
     color: var(--text-muted);
     margin-bottom: var(--space-md);
+    word-break: break-all;
 }
 
 .app-version-badge {
@@ -409,6 +433,44 @@
     margin-bottom: var(--space-lg);
 }
 
+/* App Stats Bar */
+.app-stats-bar {
+    display: flex;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    flex-wrap: wrap;
+}
+
+.app-stat {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    background-color: var(--bg-tertiary);
+    border-radius: 8px;
+    border: 1px solid var(--border-default);
+}
+
+.app-stat-icon {
+    font-size: 1.25rem;
+}
+
+.app-stat-value {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.app-stat-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.app-stat-rating {
+    color: #fbbf24;
+}
+
 /* Download Section */
 .download-section {
     padding: var(--space-2xl) 0;
@@ -422,6 +484,7 @@
     padding: var(--space-2xl);
     max-width: 600px;
     margin: 0 auto;
+    box-shadow: var(--shadow-glow);
 }
 
 .download-btn {
@@ -431,7 +494,7 @@
     gap: var(--space-md);
     width: 100%;
     padding: var(--space-lg);
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 3vw, 1.25rem);
     font-weight: 600;
     background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
     color: white;
@@ -448,8 +511,12 @@
     box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
 }
 
+.download-btn:active {
+    transform: translateY(0);
+}
+
 .download-btn-icon {
-    font-size: 1.5rem;
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
 }
 
 .download-meta {
@@ -464,6 +531,7 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-xs);
+    min-width: 80px;
 }
 
 .download-meta-label {
@@ -479,6 +547,36 @@
     font-weight: 500;
 }
 
+/* Screenshot Gallery */
+.screenshot-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-md);
+    margin: var(--space-xl) 0;
+}
+
+.screenshot-item {
+    aspect-ratio: 9/16;
+    background-color: var(--bg-tertiary);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-default);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.screenshot-item:hover {
+    border-color: var(--accent-primary);
+    transform: scale(1.02);
+    box-shadow: var(--shadow-md);
+}
+
+.screenshot-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 /* Content Sections */
 .content-section {
     padding: var(--space-2xl) 0;
@@ -490,7 +588,7 @@
 }
 
 .section-heading {
-    font-size: 1.75rem;
+    font-size: clamp(1.5rem, 4vw, 1.75rem);
     margin-bottom: var(--space-lg);
     color: var(--text-primary);
 }
@@ -548,6 +646,11 @@
     border: 1px solid var(--border-default);
     border-radius: 8px;
     padding: var(--space-md);
+    transition: all var(--transition-base);
+}
+
+.detail-item:hover {
+    border-color: var(--border-accent);
 }
 
 .detail-label {
@@ -562,6 +665,7 @@
     font-size: 1rem;
     color: var(--text-primary);
     font-weight: 500;
+    word-break: break-word;
 }
 
 /* Token-specific notice */
@@ -619,13 +723,33 @@
     text-decoration: none;
     margin-bottom: var(--space-lg);
     transition: color var(--transition-fast);
+    font-weight: 500;
 }
 
 .back-link:hover {
     color: var(--accent-primary);
 }
 
+/* Banner Image */
+.app-banner {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: var(--space-xl);
+    display: none;
+}
+
+.app-banner.visible {
+    display: block;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
+    .app-detail-hero {
+        padding: var(--space-xl) 0;
+    }
+
     .app-header {
         flex-direction: column;
         align-items: center;
@@ -641,13 +765,62 @@
         font-size: 1.75rem;
     }
 
+    .app-stats-bar {
+        justify-content: center;
+        gap: var(--space-sm);
+    }
+
+    .app-stat {
+        flex: 1;
+        min-width: 120px;
+        justify-content: center;
+    }
+
     .download-meta {
         flex-direction: column;
         gap: var(--space-md);
     }
 
+    .download-meta-item {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 100%;
+    }
+
     .details-grid {
         grid-template-columns: 1fr;
+    }
+
+    .screenshot-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .content-section {
+        padding: var(--space-xl) 0;
+    }
+
+    .download-card {
+        padding: var(--space-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .app-icon-large {
+        width: 80px;
+        height: 80px;
+    }
+
+    .screenshot-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .app-stats-bar {
+        flex-direction: column;
+    }
+
+    .app-stat {
+        width: 100%;
     }
 }
 
@@ -678,17 +851,50 @@
     ← Back to Home
 </a>
 
+<!-- Banner Image -->
+
+
 <!-- App Hero -->
 <section class="app-detail-hero">
     <div class="container">
         <div class="app-header">
-            <img src="icon.png" alt="DuckDuckGo Privacy Browser" class="app-icon-large">
+            <img src="../apps/duckduckgo/icon.png" alt="DuckDuckGo Privacy Browser" class="app-icon-large">
             <div class="app-info-large">
                 <h1 class="app-title">DuckDuckGo Privacy Browser</h1>
                 <p class="app-package-id">com.duckduckgo.mobile.android</p>
-                <div class="app-version-badge">
-                    Version 5.8.2
+
+                <!-- Stats Bar -->
+                <div class="app-stats-bar">
+                    <div class="app-stat">
+                        <span class="app-stat-icon app-stat-rating">★★★★★</span>
+                        <div>
+                            <div class="app-stat-value">4.7</div>
+                            <div class="app-stat-label">Rating</div>
+                        </div>
+                    </div>
+                    <div class="app-stat">
+                        <span class="app-stat-icon">⬇️</span>
+                        <div>
+                            <div class="app-stat-value">285.0K</div>
+                            <div class="app-stat-label">Downloads</div>
+                        </div>
+                    </div>
+                    <div class="app-stat">
+                        <span class="app-stat-icon">📦</span>
+                        <div>
+                            <div class="app-stat-value">5.8.2</div>
+                            <div class="app-stat-label">Version</div>
+                        </div>
+                    </div>
+                    <div class="app-stat">
+                        <span class="app-stat-icon">📅</span>
+                        <div>
+                            <div class="app-stat-value">2026-04-03</div>
+                            <div class="app-stat-label">Updated</div>
+                        </div>
+                    </div>
                 </div>
+
                 <p>Privacy-focused browser that doesn&#39;t track you</p>
             </div>
         </div>
@@ -719,6 +925,10 @@
                     <span class="download-meta-label">Updated</span>
                     <span class="download-meta-value">2026-04-03</span>
                 </div>
+                <div class="download-meta-item">
+                    <span class="download-meta-label">Requires</span>
+                    <span class="download-meta-value">Android 5.0+</span>
+                </div>
             </div>
         </div>
     </div>
@@ -733,6 +943,8 @@
         </div>
     </div>
 </section>
+
+
 
 <!-- What's New -->
 
@@ -773,6 +985,14 @@
                 <div class="detail-label">Last Updated</div>
                 <div class="detail-value">2026-04-03</div>
             </div>
+            <div class="detail-item">
+                <div class="detail-label">Requires Android</div>
+                <div class="detail-value">Android 5.0+</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Rating</div>
+                <div class="detail-value app-stat-rating">★★★★★ 4.7/5.0</div>
+            </div>
         </div>
     </div>
 </section>
@@ -803,8 +1023,33 @@
 <script>
     // Set app slug for the external script
     window.BEANIS_APP_SLUG = 'duckduckgo';
+
+    // Format downloads count
+    function formatDownloads(count) {
+        if (count >= 1000000) {
+            return (count / 1000000).toFixed(1) + 'M';
+        } else if (count >= 1000) {
+            return (count / 1000).toFixed(1) + 'K';
+        }
+        return count.toString();
+    }
+
+    // Initialize tooltips and interactions
+    document.addEventListener('DOMContentLoaded', function() {
+        // Screenshot lightbox
+        document.querySelectorAll('.screenshot-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const img = this.querySelector('img');
+                const modal = document.createElement('div');
+                modal.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.9);display:flex;align-items:center;justify-content:center;z-index:9999;cursor:pointer;';
+                modal.innerHTML = '<img src="' + img.src + '" style="max-width:90%;max-height:90%;border-radius:12px;">';
+                modal.addEventListener('click', () => modal.remove());
+                document.body.appendChild(modal);
+            });
+        });
+    });
 </script>
-<script src="/assets/js/app-detail.js"></script>
+<script src="../assets/js/app-detail.js"></script>
 
 </body>
 </html>
