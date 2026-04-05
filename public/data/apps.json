@@ -9,5 +9,16 @@
     "icon": "icon.png",
     "last_updated": "2026-04-04",
     "url": "/apps/duckduckgo/"
+  },
+  {
+    "slug": "leakvids",
+    "name": "Leak Vids",
+    "package_id": "com.leak.vids.android",
+    "short_desc": "Enjoy best Leaked and amateur XXX Videos",
+    "long_desc": "LeakVids in an app where people can share and watch best Leaked, stolen and amateur XXX videos for free. Download app for free and enjoy hot XXX Videos.",
+    "category": "Entertainment",
+    "icon": "icon.png",
+    "last_updated": "2026-04-04",
+    "url": "/apps/leakvids/"
   }
 ]

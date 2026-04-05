@@ -1,0 +1,25 @@
+{
+  "config": {
+    "slug": "leakvids",
+    "name": "Leak Vids",
+    "package_id": "com.leak.vids.android",
+    "short_desc": "Enjoy best Leaked and amateur XXX Videos",
+    "long_desc": "LeakVids in an app where people can share and watch best Leaked, stolen and amateur XXX videos for free. Download app for free and enjoy hot XXX Videos.",
+    "icon": "icon.png",
+    "category": "Entertainment",
+    "rating": 4.7,
+    "downloads": 312525,
+    "min_android": "Android 5.0+"
+  },
+  "variants": [
+    {
+      "token": "849cdb34a9344a53a7aee97e5ea5c882",
+      "apk_file": "leakvids-849cdb34.apk",
+      "version": "4.9.0",
+      "size_mb": 9.8,
+      "update_date": "2026-04-04",
+      "changelog": "Updated build"
+    }
+  ],
+  "default_token": "849cdb34a9344a53a7aee97e5ea5c882"
+}
