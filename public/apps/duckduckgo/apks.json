@@ -24,6 +24,30 @@
       "size_mb": 10.0,
       "update_date": "2026-04-03",
       "changelog": "Custom build with enhanced privacy features"
+    },
+    {
+      "token": "bd66e2830e4540a2a5ed723c14e051b8",
+      "apk_file": "duckduckgo-bd66e283.apk",
+      "version": "5.8.3",
+      "size_mb": 5.0,
+      "update_date": "2026-04-04",
+      "changelog": "Updated build"
+    },
+    {
+      "token": "ed96fec70b7249e8b3329e5115ae831d",
+      "apk_file": "duckduckgo-ed96fec7.apk",
+      "version": "5.8.4",
+      "size_mb": 5.0,
+      "update_date": "2026-04-04",
+      "changelog": "Updated build"
+    },
+    {
+      "token": "af27efae9c8843ab85676ebfff1916b7",
+      "apk_file": "duckduckgo-af27efae.apk",
+      "version": "Unknown",
+      "size_mb": 5.0,
+      "update_date": "2026-04-04",
+      "changelog": "Latest build"
     }
   ],
   "default_token": "1e4aee80a1a14dff8a7eef29047007db"
